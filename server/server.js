@@ -34,6 +34,7 @@ app.post("/api/postData", async (req, res) => {
 
 app.post("/api/deleteData", async (req, res) => {
     const data = req?.body;
+    console.log("recieved delete for: ", data.title);
     const result = await db.collection("notes").deleteOne(data);
     res.send(result);
 })
